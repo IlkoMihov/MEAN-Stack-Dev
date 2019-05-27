@@ -5,7 +5,7 @@ console.log(performedFunction('supercalifragilisticexpialidocious',string=>strin
 console.log(performedFunction('supercalifragilisticexpialidocious',string => retVal = {
     originalString: string,
     modifiedString: string.replace(/a/g,'A'),
-    numberReplaced: string.match((/a/g))||[].length,
+    numberReplaced: (string.match((/a/g))||[]).length,
     length: string.length
 
 }))
