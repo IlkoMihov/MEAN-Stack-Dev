@@ -13,17 +13,17 @@
 //     return top / bottom;
 // }
 //
-// const div2 = function (top, bottom, ...fred) {
-//     console.log(`In div2`);
-//     return top / bottom;
-// }
+const div2 = function (top, bottom, ...fred) {
+    console.log(`In div2`);
+    return top / bottom;
+}
+
+const div3 = function ({top, bottom}, side) {
+    console.log(`In div3`);
+    return top / bottom;
+}
 //
-// const div3 = function (top, bottom, side) {
-//     console.log(`In div3`);
-//     return top / bottom;
-// }
-// //
-// // div3(4,5);
+ div3({bottom: 4, top: 5});
 // // div2(4, 5, 6)
 //
 // // console.log(divider({top:8, bottom: 2, side: 16}))  //4
@@ -43,9 +43,14 @@
 // console.log(anArray);
 // console.log(...anArray);
 
+const blarg = () => 42;
+const bazeezle = _ => {
+    return 42;
+}
 
 const squareAndCube = x => [x*x, x*x*x, x*x*x*x];
 
 const [s,c,d] = squareAndCube(3);
 
 console.log(`Square: ${s}\nCube: ${c}\nQuad: ${d}`);
+console.log(bazeezle(3))
