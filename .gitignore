@@ -60,5 +60,11 @@ typings/
 # next.js build output
 .next
 
+<<<<<<< HEAD
 #WebStorm files
 .idea/
+=======
+#Webstorm files
+.idea/
+
+>>>>>>> 430f59fe63b96ffcfa2b9fa88d38215e0bf28836
