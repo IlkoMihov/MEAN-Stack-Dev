@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const request = require('request');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -30,8 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter); //mount the route
 app.use('/users', usersRouter);
-app.use('/foo', usersRouter);
-app.use('/fx', fxRouter);
+app.use('/foo', usersRouter);// /foo
+app.use('/apis/fx', fxRouter);  // /apis/fx/foo
+
 
 
 // catch 404 and forward to error handler

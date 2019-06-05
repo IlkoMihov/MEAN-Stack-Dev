@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const request = require("request");
 
-router.get('/', function (req, res, next) {
-       const options = { method: 'GET',
+router.get('/', function (req, res, next) {  //  /apis/fx
+
+    const options = { method: 'GET',
             url: 'http://apilayer.net/api/live',
             qs:
                 { access_key: '707d4d2111a1976c7c4bbd767a9bf3a6',
@@ -32,4 +33,8 @@ router.get('/', function (req, res, next) {
     }
 
 )
+
+router.post('/foo', function (req,res,next) {  //   //apis/fx/foo
+    
+})
 module.exports = router;
