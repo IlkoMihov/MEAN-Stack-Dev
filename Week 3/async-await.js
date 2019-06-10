@@ -7,7 +7,7 @@ const request = require('request-promise')
 const rates = function () {
     return new Promise((resolve, reject) => {
         try {
-            let fx = request('http://apilayer.net/api/live?access_key=707d4d2111a1976c7c4bbd767a9bf3a6&source=USD&currencies=EUR&format=2')
+            let fx = request('http://apilayer.net/api/live?access_key=d2111a1976c7cf3a6&source=USD&currencies=EUR&format=2')
             resolve(fx)
         } catch (err) {
             reject(err)
@@ -16,7 +16,7 @@ const rates = function () {
 }
 
 async function ratesAsync() {
-    const fx = await request('http://apilayer.net/api/live?access_key=707d4d2111a1976c7c4bbd767a9bf3a6&source=USD&currencies=EUR&format=2')
+    const fx = await request('http://apilayer.net/api/live?access_key=2111a1976c7c4ba6&source=USD&currencies=EUR&format=2')
     return fx
 }
 
