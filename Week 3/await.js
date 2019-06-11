@@ -1,50 +1,29 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  async function delayed ( ) {
-// //    return new Promise(function (resolve, reject) {
-//         setTimeout(
-//             function () {
-//                 let x = 42
-//                 return x
-//             }, 2000)
+//async / await
 //
-//
-// }
+const request = require('request-promise')
+//const request = require('request')
 
-// function delay(x) {
-//     return new Promise(
-//         resolve => {
-//         setTimeout(() => {
-//             resolve(x);
-//         }, 2000);
-//     });
-// }
-
-function delay(x) {
-    return x;
+const rates = function () {
+    return new Promise((resolve, reject) => {
+        try {
+            let fx = request('http://apilayer.net/api/live?access_key=707d4d2111a1976c7c4bbd767a9bf3a6&source=USD&currencies=EUR&format=2')
+            resolve(fx)
+        }
+        catch (err) {
+            reject(err)
+        }
+    })
 }
-console.log('starting run');
 
-async function f1() {
-    var x = await delay(10);
-    console.log(x); // 10
+async function ratesAsync() {
+    const fx = await request('http://apilayer.net/api/live?access_key=707d4d2111a1976c7c4bbd767a9bf3a6&source=USD&currencies=EUR&format=2')
+    return fx
 }
-f1();
 
-//
-// const x =  delayed()
-//     .then((x) => console.log(`Got ${x}`))
-//
-// console.log('x is now', x)
-// console.log('ending run')
+ratesAsync()
+    .then(function (fx) {
+            console.log(`Rate is ${fx}`) //resolve
+        },
+        (err) => console.log(`${err}`) //reject
+    )
+    .then(() => console.log('All done.'))
