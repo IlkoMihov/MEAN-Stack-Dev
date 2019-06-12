@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CONTACT} from '../CONTACT';
-import { CONTACTS} from '../CONTACTS-MOCK';
+import {CONTACT} from '../models/contactModel';
+//import { CONTACTS} from '../CONTACTS-MOCK';
 import { ContactServiceAsyncService} from '../services/contact-service-async.service';
 
 @Component({

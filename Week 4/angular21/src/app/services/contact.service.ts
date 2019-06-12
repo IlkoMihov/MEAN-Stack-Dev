@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-// import {CONTACTS} from '../CONTACTS-MOCK';
+import {CONTACT} from '../models/contactModel';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {CONTACT} from '../CONTACT';
-
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +13,11 @@ export class ContactService {
     return this.httpClient.get<CONTACT[]>(this.contactsEndpoint);
   }
 
-  addContact(newContact: CONTACT): void {
+  addContact(newContact: CONTACT): any {
 
-   // this.contacts.push(newContact);
+     return this.httpClient.post<any>(this.contactsEndpoint, newContact);
+
   }
 
   constructor(private httpClient: HttpClient) { }
-}
+} 
