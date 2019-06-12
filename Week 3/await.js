@@ -1,6 +1,6 @@
 //async / await
 //
-const request = require('request-promise')
+const request = require('request')
 //const request = require('request')
 
 const rates = function () {
