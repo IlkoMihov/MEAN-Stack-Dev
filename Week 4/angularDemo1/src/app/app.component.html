@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    The people currently in space are:
   </h1>
 </div>
 
@@ -10,16 +10,9 @@
 
   <ul>
   <li *ngFor="let contact of contacts">
-    <label (click)="selectContact(contact)">{{contact.name}} ({{contact.department}})</label>
+    <label (click)="selectContact(contact)">{{contact.name}} on craft: {{contact.craft}}</label>
   </li>
   </ul>
 
 </div>
 
-<div *ngIf="selectedContact">
-<!-- display selected contact -->
-  <h3>Details for {{selectedContact.name}} </h3>
-<input type="text" [(ngModel)]="selectedContact.name">
-  <input type="text" [(ngModel)]="selectedContact.department">
-
-</div>

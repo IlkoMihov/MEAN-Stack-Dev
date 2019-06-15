@@ -16,7 +16,6 @@ import {CONTACT} from './CONTACT';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CS591 Contacts';
   contacts = CONTACTS;
   private selectedContact: CONTACT;
 
